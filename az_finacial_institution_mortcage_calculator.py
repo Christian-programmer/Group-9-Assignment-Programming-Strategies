@@ -1,4 +1,4 @@
-a#1. Minimum Down Payment Component
+#1. Minimum Down Payment Component
 
 
 
