@@ -4,7 +4,22 @@
 
 
 #2. Mortgage Default Insurance Component
+if input_down_payment_percent < 10:
+    insurance_premium = 5
+elif input_down_payment_percent < 15:
+    insurance_premium = 4
+elif input_down_payment_percent < 20:
+    insurance_premium = 3
+else:
+    insurance_premium = 0
 
+"Calculates insurance cost and the end cost(principle amount;total mortgage)"
+insurance_cost = (purchase_price - down_payment) * (insurance_premium / 100)
+principle_amount = (purchase_price - down_payment) + insurance_cost
+print(
+    f"Mortgage insurance price is {insurance_cost}\n"
+    f"Total mortgage amount is {principle_amount}"
+)
 
 
 
