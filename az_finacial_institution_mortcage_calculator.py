@@ -50,12 +50,15 @@ match mortgage_term:
     case 10:
         annual_mortgage_interest_rate = 6
 
+print(f'Interest rate for the term will be {annual_mortgage_interest_rate:0.2f}%')
+
 effective_monthly_rate = ((1 + (annual_mortgage_interest_rate / 100) / 2) ** 2) ** (1 / 12) - 1
 
 number_of_monthly_payments = mortgage_amortization_period * 12
 
 math_part_1 = principal_amount * (effective_monthly_rate * (1 + effective_monthly_rate) ** number_of_monthly_payments)
 monthly_payment_amount = math_part_1 / ((1 + effective_monthly_rate) ** number_of_monthly_payments - 1)
+print(f'Monthly payment amount is: ${monthly_payment_amount:0.2f}')
 
 print(f'Interest rate for the term will be {annual_mortgage_interest_rate:0.2f}%')
 print(f'Monthly payment amount is: ${monthly_payment_amount:0.2f}')
