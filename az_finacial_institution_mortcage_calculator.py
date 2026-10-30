@@ -3,38 +3,45 @@
 # Name: Josh Bekkers
 # Date: 2026-10-30
 # Description: Calculates the minimum down payment for a property
+
+# ---CONSTANTS---
+LOWEST_PURCHASE_PRICE_THRESHOLD = 400000.0
+HIGHEST_PURCHASE_PRICE_THRESHOLD = 900000.0
+
+LOW_RATE = 0.05
+MID_RATE = 0.10
+HIGH_RATE = 0.20
+
 client_name = input("Enter client's name: ")
 address = input("Enter Property address: ")
 purchase_price = float(input("Enter purchase price: "))
 
 
-if purchase_price <= 400000:
-    minimum_payment = purchase_price * 0.05
+if purchase_price <= LOWEST_PURCHASE_PRICE_THRESHOLD
+    minimum_payment = purchase_price * LOW_RATE
 
-elif purchase_price <= 900000:
-    minimum_payment = 400000 * 0.05
-    minimum_payment = minimum_payment + (purchase_price - 400000) * 0.10
+elif purchase_price <= HIGHEST_PURCHASE_PRICE_THRESHOLD:
+    minimum_payment = LOWEST_PURCHASE_PRICE_THRESHOLD * LOW_RATE
+    minimum_payment = minimum_payment + (purchase_price - LOWEST_PURCHASE_PRICE_THRESHOLD) * MID_RATE
 
 else:
-    minimum_payment = purchase_price * 0.20
+    minimum_payment = purchase_price * HIGH_RATE
 
-minimum_percentage =0
-
-minimum_percentage = minimum_payment / purchase_price * 100
+# Calculate minimum percentage
+minimum_percentage = (minimum_payment / purchase_price) * 100
 
 print()
-print("Client name:", client_name)
-print("Property address:", address)
-print("Purchase price: $", format(purchase_price, ".2f"))
-print("Minimum down payment: $", format(minimum_payment, ".2f"))
-print("Minimum down payment percentage:",format(minimum_percentage, ".2f"), "%")
+print(f"Client name: {client_name}")
+print(f"Property address: {address}")
+print(f"Purchase price: ${purchase_price:,.2f}")
+print(f"Minimum down payment: ${minimum_payment:,.2f}")
+print(f"Minimum down payment percentage: {minimum_percentage:.2f}%")
 
 down_payment_percentage = float(input("Enter down payment percentage: "))
 
 
 if down_payment_percentage >= minimum_percentage:
     print("Down payment meets the minimum requirements.")
-
 else:
     print("Down payment is below the minimum requirements.")
 
