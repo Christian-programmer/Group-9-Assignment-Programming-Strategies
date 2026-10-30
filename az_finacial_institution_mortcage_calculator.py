@@ -1,4 +1,42 @@
 #1. Minimum Down Payment Component
+# File Name: monthly_payment.py
+# Name: Josh Bekkers
+# Date: 2026-10-30
+# Description: Calculates the minimum down payment for a property
+client_name = input("Enter client's name: ")
+address = input("Enter Property address: ")
+purchase_price = float(input("Enter purchase price: "))
+
+
+if purchase_price <= 400000:
+    minimum_payment = purchase_price * 0.05
+
+elif purchase_price <= 900000:
+    minimum_payment = 400000 * 0.05
+    minimum_payment = minimum_payment + (purchase_price - 400000) * 0.10
+
+else:
+    minimum_payment = purchase_price * 0.20
+
+minimum_percentage =0
+
+minimum_percentage = minimum_payment / purchase_price * 100
+
+print()
+print("Client name:", client_name)
+print("Property address:", address)
+print("Purchase price: $", format(purchase_price, ".2f"))
+print("Minimum down payment: $", format(minimum_payment, ".2f"))
+print("Minimum down payment percentage:",format(minimum_percentage, ".2f"), "%")
+
+down_payment_percentage = float(input("Enter down payment percentage: "))
+
+
+if down_payment_percentage >= minimum_percentage:
+    print("Down payment meets the minimum requirements.")
+
+else:
+    print("Down payment is below the minimum requirements.")
 
 
 
